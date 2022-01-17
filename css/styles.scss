@@ -1,0 +1,33 @@
+header{
+    padding: 20px;
+}
+
+button{
+    width: 128px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: rgb(107, 223, 159);
+    border:none;
+    a{
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: black;
+        letter-spacing: 2px;
+    }
+}
+
+/* Dark mode styles*/
+.dark{
+    background-color: rgb(42, 42, 65);
+
+    button{
+        background-color: red;
+        a{
+            color: whitesmoke;
+            font-weight: 600;
+            font-style: italic;
+        }
+    }
+    
+}
+
