@@ -42,10 +42,22 @@
   background-color: red !important;
 }
 
+.no-decoration {
+  text-decoration: none;
+}
+
 html {
   font-family: "Spartan", sans-serif;
   font-weight: 600;
   scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+html::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
 }
 
 header {
@@ -70,6 +82,30 @@ header .navbar-right button {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+header .navbar .menu-content {
+  display: none;
+  position: absolute;
+  bottom: 72px;
+  width: 105vw;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.5s ease-out;
+  transition: max-height 0.5s ease-out;
+}
+header .navbar .menu-content button {
+  height: 20px;
+  width: 100%;
+  padding: 25px 0px;
+}
+header .navbar .menu-content button:hover {
+  background-color: fuchsia;
+}
+header .navbar .menu-content a {
+  color: black;
+}
+header .navbar .menu-bar {
+  display: none;
+}
 header .navbar .menu-button i {
   font-size: 3rem;
 }
@@ -88,15 +124,9 @@ button {
   letter-spacing: 1px;
 }
 button .sp1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin-left: 10px;
   width: 35px;
   height: 15px;
@@ -158,6 +188,15 @@ button .sp1 .sp2 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+  }
+  header .navbar-right .menu-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0 50px 0 0;
+  }
+  header .navbar-right .menu-bar button {
+    padding: 0 15px;
   }
   header main {
     top: 0;

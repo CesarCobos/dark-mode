@@ -1,3 +1,5 @@
+include ./components/_mixins.pug
+
 doctype html
 html(lang="en")
     head
@@ -21,18 +23,27 @@ html(lang="en")
                     p Lorem
                     i#social.fab.fa-twitter
                 div.menu-button.flex.flex-justify-center.flex-items-center
-                    button(type="button")
-                        i#menuButton.fas.fa-caret-up(onClick="menuOpen()")
+                    button.collapse(type="button")
+                        i#menuButton(onClick="menuOpen()" 
+                            class= "fas fa-chevron-up")
+                    div.menu-content
+                        +menuBar() 
 
+                div.navbar-right.flex.flex-justify-center.flex-items-center
+                    div.menu-bar
+                        +menuBar() 
 
-                div.navbar-right.flex.flex-justify-center
-                    button#buttonDmode.switch.trans-5s.flex.flex-items-center.flex-justify-center(onClick="toggle_dark_mode()")
-                        //- i#buttonIcon.fas.fa-toggle-on
-                        span.sp1 
-                            span.sp2
+                    button#buttonDmode( 
+                        onClick="toggle_dark_mode()" 
+                        class=" switch trans-5s flex flex-items-center flex-justify-center ")
+                        span(
+                            class=" sp1 flex flex-items-center")
+                            span(
+                                class="sp2")
                     
         main.trans-inherit
-            
 
         script(src="./js/script.js")
         script(src="https://kit.fontawesome.com/32dce108fb.js" crossorigin="anonymous") 
+
+        

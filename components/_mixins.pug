@@ -1,0 +1,13 @@
+//- Menu navbar
+mixin menuItem(link,name)
+    button(type="button")
+        a(href=link onClick="return false" 
+            class="no-decoration")=name
+   
+mixin menuBar()
+    +menuItem("#","Hola")
+    +menuItem("#","Hola")
+    +menuItem("#","Hola")
+    +menuItem("#","Hola")
+    +menuItem("#","Hola")
+
