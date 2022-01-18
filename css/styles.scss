@@ -28,13 +28,21 @@ $primary-font: 'Spartan', sans-serif;
 .flex-spacebetween{
     justify-content: space-between;
 }
-
-
+.trans-5s{
+    transition: .5s ease-in-out;
+}
+.trans-inherit{
+    transition: inherit;
+}
+.scrolled{
+    background-color: red !important; 
+}
 
 html{
     font-family: $primary-font;
     font-weight: 600;
     scroll-behavior: smooth;
+    
 }
 
 
@@ -42,52 +50,53 @@ header{
     height: 64px;
     padding: 20px;
     .navbar{
-        width: 80vw;
+        width: 100vw;
         height: 60px;
-        max-width: 1300px;
         position: fixed;
-        top:5px;
+        top:0;
         background-color: rgb(207, 190, 216);
-        border-radius: 12px;
-        transition: .3s ease-in-out;
+        
         &-left{
             padding-left: 16px;
+
         }
         &-right{
             padding-right: 16px;
         } 
     }
 }
-.scrolled{
-    background-color: red !important; 
-}
+
 
 main{
     background-color: rgb(18, 181, 187);
     height: 150vh;
+    
 }
 
 button{
-    width: 128px;
     height: 48px;
-    border-radius: 8px;
-    background-color: $button-light-color;
+    background-color: transparent;
     border:none;
-
-    font-size: 1.5rem;
+    font-size: .8rem;
     color: $dark-text-color;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    i{
+        font-size: 1.5rem;
+        padding-left: 8px;
+    }
+    &::before{
+        content: 'Dark mode On';
+    }
 }
 
 /* Dark mode styles*/
 .dark{
     background-color: $bg-color;
     button{
-        background-color: $button-dark-color;
-
         color: $light-text-color;
-        font-weight: 600;
-        font-style: italic;
+        &::before{
+            content: 'Dark mode Off';
+        }
 
     }
     .scrolled{
@@ -98,3 +107,11 @@ button{
     }
 }
 
+@media screen and(min-width: 768px) {
+    header .navbar{
+            width: 80vw;  
+            max-width: 1300px;
+            border-radius: 12px;
+            top:5px;
+    }
+}

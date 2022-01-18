@@ -28,6 +28,20 @@
           justify-content: space-between;
 }
 
+.trans-5s {
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.trans-inherit {
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.scrolled {
+  background-color: red !important;
+}
+
 html {
   font-family: "Spartan", sans-serif;
   font-weight: 600;
@@ -39,15 +53,11 @@ header {
   padding: 20px;
 }
 header .navbar {
-  width: 80vw;
+  width: 100vw;
   height: 60px;
-  max-width: 1300px;
   position: fixed;
-  top: 5px;
+  top: 0;
   background-color: #cfbed8;
-  border-radius: 12px;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
 }
 header .navbar-left {
   padding-left: 16px;
@@ -56,24 +66,25 @@ header .navbar-right {
   padding-right: 16px;
 }
 
-.scrolled {
-  background-color: red !important;
-}
-
 main {
   background-color: #12b5bb;
   height: 150vh;
 }
 
 button {
-  width: 128px;
   height: 48px;
-  border-radius: 8px;
-  background-color: #D74A76;
+  background-color: transparent;
   border: none;
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   color: white;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+}
+button i {
+  font-size: 1.5rem;
+  padding-left: 8px;
+}
+button::before {
+  content: "Dark mode On";
 }
 
 /* Dark mode styles*/
@@ -81,14 +92,23 @@ button {
   background-color: #36454F;
 }
 .dark button {
-  background-color: #E6E6FA;
   color: black;
-  font-weight: 600;
-  font-style: italic;
+}
+.dark button::before {
+  content: "Dark mode Off";
 }
 .dark .scrolled {
   background-color: aqua !important;
 }
 .dark main {
   background-color: #131822;
+}
+
+@media screen and (min-width: 768px) {
+  header .navbar {
+    width: 80vw;
+    max-width: 1300px;
+    border-radius: 12px;
+    top: 5px;
+  }
 }

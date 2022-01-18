@@ -10,18 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;400;600;800;900&amp;display=swap" rel="stylesheet">
     <title>Document</title>
   </head>
-  <body id="dark">
+  <body class="trans-5s" id="dark">
     <header class="flex flex-items-center flex-justify-center">
-      <div class="navbar flex flex-spacebetween flex-items-center" id="nav">
-        <div class="navbar-left flex flex-itmes-center">
-          <p>Lorem</p>
+      <div class="navbar flex flex-spacebetween flex-items-center trans-5s" id="nav">
+        <div class="navbar-left flex flex-items-center">
+          <p>Lorem</p><i class="fab fa-twitter" id="social"></i>
         </div>
-        <div class="navbar-right active flex flex-justify-center">
-          <button class="switch" onClick="toggle_dark_mode()">Hello</button>
+        <div class="navbar-right flex flex-justify-center">
+          <button class="switch trans-5s flex flex-items-center flex-justify-center" id="buttonDmode" onClick="toggle_dark_mode()"><i class="fas fa-toggle-on" id="buttonIcon"></i></button>
         </div>
       </div>
     </header>
-    <main></main>
-    <script src="./js/script.js"> </script>
+    <main class="trans-inherit"></main>
+    <script src="./js/script.js"></script>
+    <script src="https://kit.fontawesome.com/32dce108fb.js" crossorigin="anonymous"> </script>
   </body>
 </html>
