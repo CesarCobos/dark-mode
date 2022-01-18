@@ -49,6 +49,7 @@ header{
         top:5px;
         background-color: rgb(207, 190, 216);
         border-radius: 12px;
+        transition: .3s ease-in-out;
         &-left{
             padding-left: 16px;
         }

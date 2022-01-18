@@ -46,6 +46,8 @@ header .navbar {
   top: 5px;
   background-color: #cfbed8;
   border-radius: 12px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 header .navbar-left {
   padding-left: 16px;
