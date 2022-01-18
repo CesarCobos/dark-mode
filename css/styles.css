@@ -42,6 +42,8 @@ header .navbar {
   width: 80vw;
   height: 60px;
   max-width: 1300px;
+  position: fixed;
+  top: 5px;
   background-color: #cfbed8;
   border-radius: 12px;
 }
@@ -52,9 +54,13 @@ header .navbar-right {
   padding-right: 16px;
 }
 
+.scrolled {
+  background-color: red !important;
+}
+
 main {
   background-color: #12b5bb;
-  height: 100vh;
+  height: 150vh;
 }
 
 button {
@@ -77,6 +83,9 @@ button {
   color: black;
   font-weight: 600;
   font-style: italic;
+}
+.dark .scrolled {
+  background-color: aqua !important;
 }
 .dark main {
   background-color: #131822;

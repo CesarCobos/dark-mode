@@ -38,7 +38,6 @@ html{
 }
 
 
-
 header{
     height: 64px;
     padding: 20px;
@@ -46,6 +45,8 @@ header{
         width: 80vw;
         height: 60px;
         max-width: 1300px;
+        position: fixed;
+        top:5px;
         background-color: rgb(207, 190, 216);
         border-radius: 12px;
         &-left{
@@ -56,10 +57,13 @@ header{
         } 
     }
 }
+.scrolled{
+    background-color: red !important; 
+}
 
 main{
     background-color: rgb(18, 181, 187);
-    height: 100vh;
+    height: 150vh;
 }
 
 button{
@@ -85,7 +89,9 @@ button{
         font-style: italic;
 
     }
-    
+    .scrolled{
+        background-color: aqua !important;
+    }
     main{
         background-color: rgb(19, 24, 34);
     }

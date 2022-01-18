@@ -6,3 +6,5 @@
 First commit: I managed to activate "dark mode" without using any framework.
 
 Second commit:  I try to improve the CSS code
+
+Thirth commit: Testing on scroll navbar cahnge color
