@@ -77,7 +77,6 @@ header{
 main{
     background-color: rgb(18, 181, 187);
     height: 150vh;
-    
 }
 
 button{
@@ -85,11 +84,28 @@ button{
     background-color: transparent;
     border:none;
     font-size: .8rem;
-    color: $dark-text-color;
+    color: $light-text-color;
     letter-spacing: 1px;
-    i{
-        font-size: 1.5rem;
-        padding-left: 8px;
+    .sp1{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 10px;
+        width: 35px;
+        height: 15px;
+        border-radius: 20px;
+        border: solid 4px;
+        
+        .sp2{
+            background-color: $light-text-color;
+            transition: .5s ease-in-out;
+            width: 12px;
+            height: 12px;
+            border-radius: 12px;
+            margin: 0 0 0 2px;
+            // box-shadow: 0 0 3px rgba(80, 80, 80, 0.692);
+        }
+
     }
     
 }
@@ -101,8 +117,11 @@ button{
 .dark{
     background-color: $bg-color;
     button{
-        color: $light-text-color;
-        
+        color: $dark-text-color;
+        .sp1 .sp2{
+                background-color: $dark-text-color;
+                margin: 0 0 0 20px;
+            }
 
     }
     .switch::before{
