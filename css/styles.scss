@@ -47,22 +47,29 @@ html{
 
 
 header{
-    height: 64px;
-    padding: 20px;
+    height: 0px;
+
     .navbar{
         width: 100vw;
-        height: 60px;
+        height: 72px;
         position: fixed;
-        top:0;
+        bottom:0vh;
         background-color: rgb(207, 190, 216);
         
         &-left{
             padding-left: 16px;
 
         }
+        
         &-right{
             padding-right: 16px;
+            button{
+                flex-direction: column;
+            }
         } 
+        .menu-button i{
+            font-size: 3rem;
+        }
     }
 }
 
@@ -84,9 +91,10 @@ button{
         font-size: 1.5rem;
         padding-left: 8px;
     }
-    &::before{
-        content: 'Dark mode On';
-    }
+    
+}
+.switch:before{
+    content: 'Dark mode On';
 }
 
 /* Dark mode styles*/
@@ -94,10 +102,11 @@ button{
     background-color: $bg-color;
     button{
         color: $light-text-color;
-        &::before{
-            content: 'Dark mode Off';
-        }
+        
 
+    }
+    .switch::before{
+        content: 'Dark mode Off';
     }
     .scrolled{
         background-color: aqua !important;
@@ -108,10 +117,26 @@ button{
 }
 
 @media screen and(min-width: 768px) {
-    header .navbar{
-            width: 80vw;  
-            max-width: 1300px;
-            border-radius: 12px;
-            top:5px;
+    header {
+        height: 40px;
+        padding: 20px;
+        .navbar{
+                width: 80vw;  
+                max-width: 1300px;
+                border-radius: 12px;
+                transform: translateY(calc(-100vh + 76px));
+                &-right{
+                    padding-right: 16px;
+                    button{
+                        flex-direction: row;
+                    }
+                }
+        }
+        main{
+            top:0;
+        }
+    }
+    .menu-button{
+        display: none;
     }
 }

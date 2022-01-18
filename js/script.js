@@ -22,8 +22,16 @@ function toggle_dark_mode(){ //este nombre también va ligado al botón con el e
     }else{
         social.className = "fab fa-facebook";
     }
-
     
+}
+
+function menuOpen(){
+    var menuButton = document.getElementById("menuButton"); 
+    if(menuButton.className === "fas fa-caret-up"){
+        menuButton.className = "fas fa-caret-down";
+    }else{
+        menuButton.className = "fas fa-caret-up";
+    }
 }
     
 

@@ -20,7 +20,9 @@ html(lang="en")
                 div.navbar-left.flex.flex-items-center
                     p Lorem
                     i#social.fab.fa-twitter
-
+                div.menu-button
+                    button(type="button")
+                        i#menuButton.fas.fa-caret-up(onClick="menuOpen()")
                 div.navbar-right.flex.flex-justify-center
                     button#buttonDmode.switch.trans-5s.flex.flex-items-center.flex-justify-center(onClick="toggle_dark_mode()")
                         i#buttonIcon.fas.fa-toggle-on
