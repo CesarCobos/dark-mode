@@ -28,7 +28,7 @@ function toggle_dark_mode(){ //este nombre también va ligado al botón con el e
 function menuOpen(){
     var menuButton = document.getElementById("menuButton"); 
     if(menuButton.className === "fas fa-chevron-up"){
-        menuButton.className = "fas fa-chevron-down";
+        menuButton.className = "fas fa-times";
     }else{
         menuButton.className = "fas fa-chevron-up";
     }

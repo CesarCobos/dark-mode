@@ -1,54 +1,85 @@
 * {
   margin: 0;
   padding: 0;
+  font-weight: 400;
 }
 
 /*Common CSS*/
-.flex {
+.no-display {
+  display: none;
+}
+
+.display-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.flex-items-center {
+.display-inherit {
+  display: inherit;
+}
+
+.align-items-center {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.flex-justify-center {
+.justify-content-center {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.flex-spacebetween {
+.justify-inherit {
+  -webkit-box-pack: inherit;
+      -ms-flex-pack: inherit;
+          justify-content: inherit;
+}
+
+.justify-spacebetween {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
-.trans-5s {
+.transition-5 {
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
 
-.trans-inherit {
+.transition-inherit {
   -webkit-transition: inherit;
   transition: inherit;
 }
 
-.scrolled {
-  background-color: red !important;
+.transparent-background {
+  background-color: transparent;
+}
+
+.no-border {
+  border: none;
+}
+
+.text-dark {
+  color: #212121;
 }
 
 .no-decoration {
   text-decoration: none;
 }
 
+.background-light-color {
+  background-color: #e9e8ed;
+}
+
+.width-100vw {
+  width: 100vw;
+}
+
 html {
   font-family: "Spartan", sans-serif;
-  font-weight: 600;
+  color: #212121;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   /* IE and Edge */
@@ -60,149 +91,183 @@ html::-webkit-scrollbar {
   /* Chrome, Safari and Opera */
 }
 
-header {
-  height: 0px;
-}
-header .navbar {
-  width: 100vw;
-  height: 72px;
-  position: fixed;
-  bottom: 0vh;
-  background-color: #cfbed8;
-}
-header .navbar-left {
-  padding-left: 16px;
-}
-header .navbar-right {
-  padding-right: 16px;
-}
-header .navbar-right button {
+body {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
-header .navbar .menu-content {
-  display: none;
+
+header .hls a {
+  font-size: 1rem;
+}
+header .hls a:hover {
+  color: #d63a45;
+}
+header .nav-container {
+  position: fixed;
+  bottom: 0;
+  height: 72px;
+}
+header .nav-container .navbar {
+  max-width: 1300px;
+  padding: 0px 16px;
+}
+header .nav-container .navbar-left {
+  width: 15vw;
+  padding-left: 16px;
+}
+header .nav-container .navbar .sm-menu i {
+  font-size: 3rem;
+}
+header .nav-container .navbar-right {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-size: 0.8rem;
+}
+header .sm-menu-content {
   position: absolute;
-  bottom: 72px;
-  width: 105vw;
+  bottom: 80px;
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: max-height 0.5s ease-out;
-  transition: max-height 0.5s ease-out;
 }
-header .navbar .menu-content button {
-  height: 20px;
-  width: 100%;
-  padding: 25px 0px;
+header .sm-menu-content button {
+  height: 45px;
 }
-header .navbar .menu-content button:hover {
-  background-color: fuchsia;
+header .sm-menu-content button:focus {
+  background-color: #d63a45;
 }
-header .navbar .menu-content a {
-  color: black;
+header .darkMode-toggler {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
-header .navbar .menu-bar {
-  display: none;
+header .darkMode-toggler::before {
+  content: "Dark mode On";
 }
-header .navbar .menu-button i {
-  font-size: 3rem;
+header .darkMode-toggler button {
+  width: 43px;
+  height: 21px;
+  border-radius: 21px;
+  border: 3px solid;
+}
+header .darkMode-toggler button .toggler-span-a {
+  width: 12px;
+  height: 12px;
+  margin-left: 1px;
+  border-radius: 12px;
+  background-color: #212121;
+}
+header .darkMode-toggler button:hover {
+  color: #d63a45;
+}
+header .darkMode-toggler button:hover .toggler-span-a {
+  background-color: #d63a45;
 }
 
 main {
-  background-color: #12b5bb;
-  height: 150vh;
+  height: 200vh;
 }
 
-button {
-  height: 48px;
-  background-color: transparent;
-  border: none;
-  font-size: 0.8rem;
-  color: black;
-  letter-spacing: 1px;
+.scrolled {
+  background-color: #212121;
 }
-button .sp1 {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  margin-left: 10px;
-  width: 35px;
-  height: 15px;
-  border-radius: 20px;
-  border: solid 4px;
+.scrolled .navbar {
+  color: #e9e8ed;
 }
-button .sp1 .sp2 {
-  background-color: black;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-  width: 12px;
-  height: 12px;
-  border-radius: 12px;
-  margin: 0 0 0 2px;
+.scrolled .navbar a {
+  color: #e9e8ed;
+}
+.scrolled .navbar a:hover {
+  color: #d63a45;
+}
+.scrolled .collapse i {
+  color: #e9e8ed;
+}
+.scrolled .darkMode-toggler button {
+  color: #e9e8ed;
+}
+.scrolled .darkMode-toggler button .toggler-span-a {
+  background-color: #e9e8ed;
+}
+.scrolled .sm-menu-content a {
+  color: #212121;
 }
 
-.switch:before {
-  content: "Dark mode On";
-}
-
-/* Dark mode styles*/
 .dark {
-  background-color: #36454F;
+  background-color: #212121;
+  color: #e9e8ed;
 }
-.dark button {
-  color: white;
+.dark .hls a {
+  color: #e9e8ed;
 }
-.dark button .sp1 .sp2 {
-  background-color: white;
-  margin: 0 0 0 20px;
+.dark .hls a:hover {
+  color: #11858f;
 }
-.dark .switch::before {
+.dark .darkMode-toggler::before {
   content: "Dark mode Off";
 }
-.dark .scrolled {
-  background-color: aqua !important;
+.dark .darkMode-toggler button {
+  color: inherit;
 }
-.dark main {
-  background-color: #131822;
+.dark .darkMode-toggler button .toggler-span-a {
+  margin-left: 23px;
+  background-color: #e9e8ed;
+}
+.dark .darkMode-toggler button:hover {
+  color: #11858f;
+}
+.dark .darkMode-toggler button:hover .toggler-span-a {
+  background-color: #11858f;
+}
+.dark .sm-menu-content button:focus {
+  background-color: #11858f;
+}
+.dark .collapse {
+  color: inherit;
+}
+.dark .scrolled {
+  background-color: #e9e8ed;
+}
+.dark .scrolled .hls a:hover, .dark .scrolled .sm-menu-content:hover {
+  color: #11858f;
+}
+.dark .scrolled .navbar, .dark .scrolled .collapse i, .dark .scrolled .hls a {
+  color: #212121;
+}
+.dark .scrolled .sm-menu-content a {
+  color: #e9e8ed;
+}
+.dark .scrolled .darkMode-toggler:nth-child(n) {
+  color: #212121;
+}
+.dark .scrolled .darkMode-toggler:nth-child(n) button .toggler-span-a {
+  background-color: #212121;
+}
+.dark .scrolled .darkMode-toggler:nth-child(n) button:hover {
+  color: #11858f;
+}
+.dark .scrolled .darkMode-toggler:nth-child(n) button:hover .toggler-span-a {
+  background-color: #11858f;
 }
 
 @media screen and (min-width: 768px) {
-  header {
-    height: 40px;
-    padding: 20px;
+  header .nav-container {
+    -webkit-transform: translateY(calc(-100vh + 72px));
+            transform: translateY(calc(-100vh + 72px));
   }
-  header .navbar {
-    width: 80vw;
-    max-width: 1300px;
-    border-radius: 12px;
-    -webkit-transform: translateY(calc(-100vh + 76px));
-            transform: translateY(calc(-100vh + 76px));
-  }
-  header .navbar-right {
-    padding-right: 16px;
-  }
-  header .navbar-right button {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  header .navbar-right .menu-bar {
+  header .menu-items {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 0 50px 0 0;
+    margin-right: 10px;
   }
-  header .navbar-right .menu-bar button {
-    padding: 0 15px;
+  header .menu-items button {
+    margin: 0 10px;
   }
-  header main {
-    top: 0;
-  }
-
-  .menu-button {
+  header .sm-menu {
     display: none;
   }
 }

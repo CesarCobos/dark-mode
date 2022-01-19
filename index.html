@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html class="background-light-color transition-5" id="dark" lang="en">
+  <head class="width-100vw">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,35 +10,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;400;600;800;900&amp;display=swap" rel="stylesheet">
     <title>Document</title>
   </head>
-  <body class="trans-5s" id="dark">
-    <header class="flex flex-items-center flex-justify-center">
-      <div class="navbar flex flex-spacebetween flex-items-center trans-5s" id="nav">
-        <div class="navbar-left flex flex-items-center">
-          <p>Lorem</p><i class="fab fa-twitter" id="social"></i>
-        </div>
-        <div class="menu-button flex flex-justify-center flex-items-center">
-          <button class="collapse" type="button"><i class="fas fa-chevron-up" id="menuButton" onClick="menuOpen()"></i></button>
-          <div class="menu-content">
-            <button type="button"><a class="no-decoration" href="#" onClick="return false">Hola</a></button>
-            <button type="button"><a class="no-decoration" href="#" onClick="return false">Hola</a></button>
-            <button type="button"><a class="no-decoration" href="#" onClick="return false">Hola</a></button>
-            <button type="button"><a class="no-decoration" href="#" onClick="return false">Hola</a></button>
-            <button type="button"><a class="no-decoration" href="#" onClick="return false">Hola</a></button>
+  <body class="display-flex align-items-center">
+    <header class="display-inherit justify-content-center align-items-center transition-5">
+      <div class="nav-container display-inherit width-100vw justify-inherit align-items-center transition-inherit" id="nav">
+        <div class="navbar display-inherit width-100vw justify-inherit align-items-center justify-spacebetween">
+          <div class="navbar-left display-inherit align-items-center">
+            <p>Cesar Cobos</p>
           </div>
-        </div>
-        <div class="navbar-right flex flex-justify-center flex-items-center">
-          <div class="menu-bar">
-            <button type="button"><a class="no-decoration" href="#" onClick="return false">Hola</a></button>
-            <button type="button"><a class="no-decoration" href="#" onClick="return false">Hola</a></button>
-            <button type="button"><a class="no-decoration" href="#" onClick="return false">Hola</a></button>
-            <button type="button"><a class="no-decoration" href="#" onClick="return false">Hola</a></button>
-            <button type="button"><a class="no-decoration" href="#" onClick="return false">Hola</a></button>
+          <div class="sm-menu display-inherit justify-content-center">
+            <button class="collapse no-border transparent-background" type="button"><i class="fas fa-chevron-up" id="menuButton" onClick="menuOpen()"> </i></button>
+            <div class="hls sm-menu-content no-display width-100vw transition-5">
+              <button class="transparent-background no-border width-100vw" type="button"><a class="text-dark no-decoration transition-5" href="#" onClick="return false">Home</a></button>
+              <button class="transparent-background no-border width-100vw" type="button"><a class="text-dark no-decoration transition-5" href="#" onClick="return false">About_me</a></button>
+              <button class="transparent-background no-border width-100vw" type="button"><a class="text-dark no-decoration transition-5" href="#" onClick="return false">Projects</a></button>
+              <button class="transparent-background no-border width-100vw" type="button"><a class="text-dark no-decoration transition-5" href="#" onClick="return false">Resume</a></button>
+              <button class="transparent-background no-border width-100vw" type="button"><a class="text-dark no-decoration transition-5" href="#" onClick="return false">Blog</a></button>
+            </div>
           </div>
-          <button class=" switch trans-5s flex flex-items-center flex-justify-center " id="buttonDmode" onClick="toggle_dark_mode()"><span class=" sp1 flex flex-items-center"><span class="sp2"></span></span></button>
+          <div class="navbar-right display-inherit align-items-center">
+            <div class="hls menu-items no-display">
+              <button class="transparent-background no-border" type="button"><a class="text-dark no-decoration transition-5" href="#" onClick="return false">Home</a></button>
+              <button class="transparent-background no-border" type="button"><a class="text-dark no-decoration transition-5" href="#" onClick="return false">About_me</a></button>
+              <button class="transparent-background no-border" type="button"><a class="text-dark no-decoration transition-5" href="#" onClick="return false">Projects</a></button>
+              <button class="transparent-background no-border" type="button"><a class="text-dark no-decoration transition-5" href="#" onClick="return false">Resume</a></button>
+              <button class="transparent-background no-border" type="button"><a class="text-dark no-decoration transition-5" href="#" onClick="return false">Blog</a></button>
+            </div>
+            <div class="darkMode-toggler display-inherit align-items-center justify-content-center">
+              <button class="display-inherit align-items-center transparent-background transition-5" type="button" onClick="toggle_dark_mode()"><a href="http://"></a><span class="toggler-span-a transition-inherit"></span></button>
+            </div>
+          </div>
         </div>
       </div>
     </header>
-    <main class="trans-inherit"></main>
+    <main class="transition-inherit"></main>
     <script src="./js/script.js"></script>
     <script src="https://kit.fontawesome.com/32dce108fb.js" crossorigin="anonymous"> </script>
   </body>

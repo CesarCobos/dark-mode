@@ -1,13 +1,20 @@
 //- Menu navbar
-mixin menuItem(link,name)
-    button(type="button")
-        a(href=link onClick="return false" 
-            class="no-decoration")=name
+mixin menuItem(link,name,xtraclass)
+    button(type="button" class="transparent-background no-border" class=xtraclass)
+        a.text-dark(href=link onClick="return false" 
+            class="no-decoration transition-5")=name
    
 mixin menuBar()
-    +menuItem("#","Hola")
-    +menuItem("#","Hola")
-    +menuItem("#","Hola")
-    +menuItem("#","Hola")
-    +menuItem("#","Hola")
+    +menuItem("#","Home")
+    +menuItem("#","About_me")
+    +menuItem("#","Projects")
+    +menuItem("#","Resume")
+    +menuItem("#","Blog")
+
+mixin menuBars()
+    +menuItem("#","Home","width-100vw")
+    +menuItem("#","About_me","width-100vw")
+    +menuItem("#","Projects","width-100vw")
+    +menuItem("#","Resume","width-100vw")
+    +menuItem("#","Blog","width-100vw")
 

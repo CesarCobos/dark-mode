@@ -1,47 +1,74 @@
 //Background colors
-$button-light-color: #D74A76;
-$button-dark-color: #E6E6FA;
-$bg-color: #36454F;
+$bg-dark-color: #212121;
+$bg-light-color: #e9e8ed;
+$bg-white-color: white;
+
 //text colors
-$light-text-color: black;
-$dark-text-color: white;
+$light-text-color: #212121;
+$dark-text-color: #e9e8ed;
 //font families
+
+$accent-light-color: #d63a45;
+$accent-dark-color: #11858f;
 $primary-font: 'Spartan', sans-serif;
 
 *{
     margin: 0;
     padding: 0;
+    font-weight: 400;
 }
 
+
 /*Common CSS*/
-.flex{
+.no-display{
+    display: none;
+}
+.display-flex{
     display: flex;
 }
-.flex-items-center{
+.display-inherit{
+    display: inherit;
+}
+.align-items-center{
     align-items: center;
 }
-.flex-justify-center{
+.justify-content-center{
     justify-content: center;
 }
-.flex-spacebetween{
+.justify-inherit{
+    justify-content: inherit;
+}
+.justify-spacebetween{
     justify-content: space-between;
 }
-.trans-5s{
+.transition-5{
     transition: .5s ease-in-out;
 }
-.trans-inherit{
+.transition-inherit{
     transition: inherit;
 }
-.scrolled{
-    background-color: red !important; 
+.transparent-background{
+    background-color: transparent;
+}
+.no-border{
+    border: none;
+}
+.text-dark{
+    color: $light-text-color;
 }
 .no-decoration{
     text-decoration: none;
 }
+.background-light-color{
+    background-color: $bg-light-color;
+}
+.width-100vw{
+    width:100vw;
+}
 
 html{
     font-family: $primary-font;
-    font-weight: 600;
+    color: $light-text-color;
     scroll-behavior: smooth;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
@@ -49,134 +76,189 @@ html{
         display: none; /* Chrome, Safari and Opera */
     }
 }
-
+body{
+    flex-direction: column;
+}
 header{
-    height: 0px;
-    .navbar{
-        width: 100vw;
-        height: 72px;
+    .hls a{
+        font-size: 1rem;
+        &:hover{
+            color: $accent-light-color;
+        }  
+    }
+    .nav-container{
         position: fixed;
-        bottom:0vh;
-        background-color: rgb(207, 190, 216);
-        &-left{
-            padding-left: 16px;
-        }
-        &-right{
-            padding-right: 16px;
-            button{
-                flex-direction: column;
+        bottom: 0;
+        height: 72px;
+        .navbar{
+            max-width: 1300px;
+            padding: 0px 16px;
+            &-left{
+                width: 15vw;
+                padding-left: 16px;
             }
-        } 
-        .menu-content{
-            display:none;
-            position:absolute;
-            bottom:72px;
-            width: 105vw;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
-            button{
-                height: 20px;
-                width: 100%;
-                padding: 25px 0px;
-                &:hover{
-                    background-color: fuchsia;
+            .sm-menu i{
+                font-size: 3rem;
+            }
+            &-right{
+                justify-content: flex-end;
+                font-size: .8rem;
+            }
+        }
+    }
+
+    .sm-menu-content{
+        position: absolute;
+        bottom: 80px;
+        max-height: 0;
+        overflow: hidden;
+        button{
+            height: 45px;
+            &:focus{
+                background-color: $accent-light-color;
+            }
+        }
+       
+    }
+
+    .darkMode-toggler{
+        &::before{
+            content: 'Dark mode On';
+        }
+        flex-direction: column;
+        button{   
+            width: 43px;
+            height: 21px;
+            border-radius: 21px;
+            border: 3px solid;
+            .toggler-span-a{
+                width: 12px;
+                height: 12px;
+                margin-left:1px ;
+                border-radius: 12px;
+                background-color: $light-text-color;
+            }
+            &:hover{
+                color: $accent-light-color;
+                .toggler-span-a{
+                    background-color: $accent-light-color;
                 }
             }
-            a{
-                color: $light-text-color;
-            }
-        }
-        .menu-bar{
-            display: none;
-        }
-        .menu-button i{
-            font-size: 3rem;
         }
     }
 }
 
 main{
-    background-color: rgb(18, 181, 187);
-    height: 150vh;
-}
-button{
-    height: 48px;
-    background-color: transparent;
-    border:none;
-    font-size: .8rem;
-    color: $light-text-color;
-    letter-spacing: 1px;
-    .sp1{
-        justify-content: flex-start;
-        margin-left: 10px;
-        width: 35px;
-        height: 15px;
-        border-radius: 20px;
-        border: solid 4px;
-        .sp2{
-            background-color: $light-text-color;
-            transition: .5s ease-in-out;
-            width: 12px;
-            height: 12px;
-            border-radius: 12px;
-            margin: 0 0 0 2px;
-        }
-    }
-}
-.switch:before{
-    content: 'Dark mode On';
+    height: 200vh;
 }
 
-/* Dark mode styles*/
-.dark{
-    background-color: $bg-color;
-    button{
+.scrolled{
+    background-color: $bg-dark-color ;
+    .navbar{
         color: $dark-text-color;
-        .sp1 .sp2{
-                background-color: $dark-text-color;
-                margin: 0 0 0 20px;
+        a{
+            color: $dark-text-color;
+            &:hover{
+                color: $accent-light-color;
             }
+        }
     }
-    .switch::before{
-        content: 'Dark mode Off';
+    .collapse i{
+        color: $dark-text-color;
     }
-    .scrolled{
-        background-color: aqua !important;
-    }
-    main{
-        background-color: rgb(19, 24, 34);
+    .darkMode-toggler{
+      button{
+          color: $dark-text-color;
+          .toggler-span-a{
+              background-color: $dark-text-color;
+          }
+        }
+      }
+    .sm-menu-content a {
+        color: $light-text-color;
     }
 }
+
+
+.dark{
+    background-color: $bg-dark-color;
+    color:$dark-text-color;
+    .hls a{
+        color: $dark-text-color ;
+        &:hover{
+            color: $accent-dark-color ;
+        }   
+    }
+    .darkMode-toggler{
+        &::before{
+            content: 'Dark mode Off';
+        }
+        button{
+            color: inherit ;
+            .toggler-span-a{
+                margin-left:23px;
+                background-color: $dark-text-color ;
+            }
+            &:hover{
+                color: $accent-dark-color;
+                .toggler-span-a{
+                    background-color: $accent-dark-color;
+                }
+            } 
+        }
+    }
+    .sm-menu-content{
+        button:focus{
+                background-color: $accent-dark-color;
+        }
+    }
+    .collapse{
+        color: inherit;
+    }
+    .scrolled{
+        background-color: $bg-light-color ;
+        .hls a:hover, .sm-menu-content:hover{
+                color: $accent-dark-color ;
+            }   
+        .navbar, .collapse i, .hls a{
+            color: $light-text-color;
+        }
+        .sm-menu-content a{
+                color: $dark-text-color ;
+        }
+        .darkMode-toggler:nth-child(n){
+            color: $light-text-color;
+            button{
+                .toggler-span-a{
+                    background-color: $light-text-color;
+                }
+                &:hover{
+                    color: $accent-dark-color;
+                    .toggler-span-a{
+                        background-color: $accent-dark-color;
+                    }
+                }
+            }    
+        }
+        
+    }   
+}
+
 
 @media screen and(min-width: 768px) {
     header {
-        height: 40px;
-        padding: 20px;
-        .navbar{
-            width: 80vw;  
-            max-width: 1300px;
-            border-radius: 12px;
-            transform: translateY(calc(-100vh + 76px));
-            &-right{
-                padding-right: 16px;
-                button{
-                    flex-direction: row;
-                }
-                .menu-bar{
-                    display: flex;
-                    padding: 0 50px 0 0 ;
-                    button{
-                        padding: 0 15px;
-                    }
-                }
-            }   
+        .nav-container{
+            transform: translateY(calc(-100vh + 72px)); 
         }
-        main{
-            top:0;
+        .menu-items{
+            display: flex;
+            margin-right: 10px;
+            button{
+                margin: 0 10px;
+            }
         }
-    }
-    .menu-button{
-        display: none;
+        .sm-menu{
+            display: none;
+        }  
     }
 }

@@ -1,8 +1,8 @@
 include ./components/_mixins.pug
 
 doctype html
-html(lang="en")
-    head
+html#dark.background-light-color.transition-5(lang="en")
+    head.width-100vw
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -16,32 +16,26 @@ html(lang="en")
         link(href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;400;600;800;900&display=swap" rel="stylesheet")
         
         title Document
-    body#dark.trans-5s
-        header.flex.flex-items-center.flex-justify-center
-            div.navbar.flex.flex-spacebetween.flex-items-center.trans-5s#nav
-                div.navbar-left.flex.flex-items-center
-                    p Lorem
-                    i#social.fab.fa-twitter
-                div.menu-button.flex.flex-justify-center.flex-items-center
-                    button.collapse(type="button")
-                        i#menuButton(onClick="menuOpen()" 
-                            class= "fas fa-chevron-up")
-                    div.menu-content
-                        +menuBar() 
-
-                div.navbar-right.flex.flex-justify-center.flex-items-center
-                    div.menu-bar
-                        +menuBar() 
-
-                    button#buttonDmode( 
-                        onClick="toggle_dark_mode()" 
-                        class=" switch trans-5s flex flex-items-center flex-justify-center ")
-                        span(
-                            class=" sp1 flex flex-items-center")
-                            span(
-                                class="sp2")
-                    
-        main.trans-inherit
+    body.display-flex.align-items-center
+        header.display-inherit.justify-content-center.align-items-center.transition-5
+            .nav-container#nav.display-inherit.width-100vw.justify-inherit.align-items-center.transition-inherit
+                .navbar.display-inherit.width-100vw.justify-inherit.align-items-center.justify-spacebetween
+                    .navbar-left.display-inherit.align-items-center
+                        p Cesar Cobos
+                    .sm-menu.display-inherit.justify-content-center
+                        button.collapse.no-border.transparent-background(type="button")
+                            i#menuButton(onClick="menuOpen()" class="fas fa-chevron-up") 
+                        .hls.sm-menu-content.no-display.width-100vw.transition-5
+                            +menuBars()
+                    .navbar-right.display-inherit.align-items-center
+                        .hls.menu-items.no-display
+                            +menuBar()
+                        .darkMode-toggler.display-inherit.align-items-center.justify-content-center
+                            button.display-inherit.align-items-center.transparent-background.transition-5(type="button" onClick="toggle_dark_mode()")
+                                a(href="http://")
+                                span.toggler-span-a.transition-inherit
+                                
+        main.transition-inherit
 
         script(src="./js/script.js")
         script(src="https://kit.fontawesome.com/32dce108fb.js" crossorigin="anonymous") 
