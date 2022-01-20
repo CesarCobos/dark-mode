@@ -1,4 +1,16 @@
-// Definiendo una funciona para activar el modo oscuro
+
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+} else {
+  document.documentElement.classList.remove('dark')
+}
+localStorage.theme = 'light'
+localStorage.theme = 'dark'
+localStorage.removeItem('theme')
+
+
+
+
 function toggle_dark_mode(){ //este nombre también va ligado al botón con el evento onClick
 // identificando el id "dark" en el HTML y asignandolo a la variable "element"
     var element = document.getElementById("dark")
@@ -27,10 +39,12 @@ function toggle_dark_mode(){ //este nombre también va ligado al botón con el e
 
 function menuOpen(){
     var menuButton = document.getElementById("menuButton"); 
-    if(menuButton.className === "fas fa-chevron-up"){
-        menuButton.className = "fas fa-times";
+    if(menuButton.classList.contains("fa-chevron-up")){
+      menuButton.classList.remove("fa-chevron-up");
+      menuButton.classList.add("fa-times");
     }else{
-        menuButton.className = "fas fa-chevron-up";
+      menuButton.classList.remove("fa-times");
+      menuButton.classList.add("fa-chevron-up");
     }
 }
     
@@ -60,10 +74,10 @@ for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
-    if (content.style.display === "block") {
+    if (content.style.display === "flex") {
       content.style.display = "none";
     } else {
-      content.style.display = "block";
+      content.style.display = "flex";
     }
   });
 }

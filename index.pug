@@ -1,43 +1,14 @@
-include ./components/_mixins.pug
+include ./components/_head.pug
+body.display-flex.align-items-center.flex-column
+    header.display-inherit.justify-content-center.align-items-center.transition-5
+        include ./components/_header.pug
+                            
+    main.transition-inherit.flex.justify-content-center.width-100vw
+        //- include ./components/_hero.pug
+        //- include ./components/_aboutme.pug
 
-doctype html
-html#dark.background-light-color.transition-5(lang="en")
-    head.width-100vw
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
-        link(rel="stylesheet", href="./css/styles.css")
-    
-        link(rel="preconnect" href="https://fonts.googleapis.com")
-        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-        //- Sans Serif Font
-        
-        link(href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;400;600;800;900&display=swap" rel="stylesheet")
-        
-        title Document
-    body.display-flex.align-items-center
-        header.display-inherit.justify-content-center.align-items-center.transition-5
-            .nav-container#nav.display-inherit.width-100vw.justify-inherit.align-items-center.transition-inherit
-                .navbar.display-inherit.width-100vw.justify-inherit.align-items-center.justify-spacebetween
-                    .navbar-left.display-inherit.align-items-center
-                        p Cesar Cobos
-                    .sm-menu.display-inherit.justify-content-center
-                        button.collapse.no-border.transparent-background(type="button")
-                            i#menuButton(onClick="menuOpen()" class="fas fa-chevron-up") 
-                        .hls.sm-menu-content.no-display.width-100vw.transition-5
-                            +menuBars()
-                    .navbar-right.display-inherit.align-items-center
-                        .hls.menu-items.no-display
-                            +menuBar()
-                        .darkMode-toggler.display-inherit.align-items-center.justify-content-center
-                            button.display-inherit.align-items-center.transparent-background.transition-5(type="button" onClick="toggle_dark_mode()")
-                                a(href="http://")
-                                span.toggler-span-a.transition-inherit
-                                
-        main.transition-inherit
-
-        script(src="./js/script.js")
-        script(src="https://kit.fontawesome.com/32dce108fb.js" crossorigin="anonymous") 
+    script(src="./js/script.js")
+    script(src="https://kit.fontawesome.com/32dce108fb.js" crossorigin="anonymous") 
 
         

@@ -1,20 +1,20 @@
 //- Menu navbar
-mixin menuItem(link,name,xtraclass)
-    button(type="button" class="transparent-background no-border" class=xtraclass)
-        a.text-dark(href=link onClick="return false" 
-            class="no-decoration transition-5")=name
+mixin menuItem(link,name,class_1,class_2,class_3)
+    a.text-dark.hiperlink(href=link onClick="return false" class=class_1 class=class_2 class=class_3
+        class="no-decoration transition-5")=name
+        //- span.width-100vw.height-45px
    
 mixin menuBar()
-    +menuItem("#","Home")
-    +menuItem("#","About_me")
-    +menuItem("#","Projects")
-    +menuItem("#","Resume")
-    +menuItem("#","Blog")
+    +menuItem("#","Home","upbar")
+    +menuItem("#","About_me","upbar")
+    +menuItem("#","Projects","upbar")
+    +menuItem("#","Resume","upbar")
+    +menuItem("#","Blog","upbar")
 
-mixin menuBars()
-    +menuItem("#","Home","width-100vw")
-    +menuItem("#","About_me","width-100vw")
-    +menuItem("#","Projects","width-100vw")
-    +menuItem("#","Resume","width-100vw")
-    +menuItem("#","Blog","width-100vw")
+mixin small-menu()
+    +menuItem("#","Home","small-hover","width-100vw")
+    +menuItem("#","About_me","small-hover","width-100vw")
+    +menuItem("#","Projects","small-hover","width-100vw")
+    +menuItem("#","Resume","small-hover","width-100vw")
+    +menuItem("#","Blog","small-hover","width-100vw")
 

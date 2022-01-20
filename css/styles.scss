@@ -4,8 +4,8 @@ $bg-light-color: #e9e8ed;
 $bg-white-color: white;
 
 //text colors
-$light-text-color: #212121;
-$dark-text-color: #e9e8ed;
+$dark-text-color: #212121;
+$light-text-color: #e9e8ed;
 //font families
 
 $accent-light-color: #d63a45;
@@ -25,6 +25,9 @@ $primary-font: 'Spartan', sans-serif;
 }
 .display-flex{
     display: flex;
+}
+.display-block{
+    display: block;
 }
 .display-inherit{
     display: inherit;
@@ -54,7 +57,7 @@ $primary-font: 'Spartan', sans-serif;
     border: none;
 }
 .text-dark{
-    color: $light-text-color;
+    color: $dark-text-color;
 }
 .no-decoration{
     text-decoration: none;
@@ -62,203 +65,228 @@ $primary-font: 'Spartan', sans-serif;
 .background-light-color{
     background-color: $bg-light-color;
 }
+.width-80vw{
+    width: 80vw;
+}
+.max-width-1300{
+    max-width: 1300px;
+}
 .width-100vw{
     width:100vw;
 }
+.width-90vw{
+    width:90vw;
+}
+.width-50vw{
+    width:50vw;
+}
+.height-50vh{
+    height: 50vh;
+}
+.height-45px{
+    height: 45px;
+}
+.text-header{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+
+}
+.text-large{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+
+}
+.text-small{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+.text-normal{
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+}
+.padding-bottom-12{
+    padding-bottom: 12px;
+}
+.hiperlink{
+    font-size: 1rem;
+
+}
+.upbar{
+    padding: 0 10px;
+    &:hover{
+        color: $accent-light-color;
+    }
+}
+.flex-column{
+    flex-direction: column;
+}
+
+
 
 html{
     font-family: $primary-font;
-    color: $light-text-color;
+    color: $dark-text-color;
     scroll-behavior: smooth;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     &::-webkit-scrollbar {
-        display: none; /* Chrome, Safari and Opera */
+        display: none;
     }
 }
-body{
-    flex-direction: column;
-}
+
 header{
-    .hls a{
-        font-size: 1rem;
-        &:hover{
-            color: $accent-light-color;
-        }  
-    }
-    .nav-container{
-        position: fixed;
-        bottom: 0;
-        height: 72px;
-        .navbar{
-            max-width: 1300px;
-            padding: 0px 16px;
-            &-left{
-                width: 15vw;
-                padding-left: 16px;
-            }
-            .sm-menu i{
-                font-size: 3rem;
-            }
-            &-right{
-                justify-content: flex-end;
-                font-size: .8rem;
-            }
-        }
-    }
+    height: 0;
+}
 
-    .sm-menu-content{
-        position: absolute;
-        bottom: 80px;
-        max-height: 0;
-        overflow: hidden;
-        button{
-            height: 45px;
-            &:focus{
-                background-color: $accent-light-color;
-            }
-        }
-       
+.nav-container{
+    position: fixed;
+    bottom: 0;
+    height: 72px;
+}
+.navbar{
+    padding: 0px 16px;
+    &-left{
+        width: 15vw;
+        padding-left: 16px;
     }
-
-    .darkMode-toggler{
-        &::before{
-            content: 'Dark mode On';
-        }
-        flex-direction: column;
-        button{   
-            width: 43px;
-            height: 21px;
-            border-radius: 21px;
-            border: 3px solid;
-            .toggler-span-a{
-                width: 12px;
-                height: 12px;
-                margin-left:1px ;
-                border-radius: 12px;
-                background-color: $light-text-color;
-            }
-            &:hover{
-                color: $accent-light-color;
-                .toggler-span-a{
-                    background-color: $accent-light-color;
-                }
-            }
-        }
+    
+    &-right{
+        justify-content: flex-end;
+    }
+}
+.sm-menu-content{
+    position: absolute;
+    bottom: 80px;
+    max-height: 0;
+    overflow: hidden;    
+}
+.small-hover {
+    padding: 10px 0px;
+    text-align: center;
+    &:focus{
+        background-color: $accent-light-color;
+    }
+    &:hover{
+        background-color: $accent-light-color;
+        color: $light-text-color;
+    }
+}
+.darkMode-toggler{ 
+    &::before{
+        content: 'Dark mode On';
+    }
+}
+.button-toggler{   
+    width: 43px;
+    height: 21px;
+    border-radius: 21px;
+    border: 3px solid;
+    &:hover{
+        color: $accent-light-color;
     }
 }
 
+.button-toggler-span-a{
+    width: 12px;
+    height: 12px;
+    margin-left:1px ;
+    border-radius: 12px;
+    background-color: $bg-dark-color;
+}
 main{
-    height: 200vh;
+    height: 200vh;    
 }
 
 .scrolled{
     background-color: $bg-dark-color ;
-    .navbar{
-        color: $dark-text-color;
-        a{
-            color: $dark-text-color;
-            &:hover{
-                color: $accent-light-color;
-            }
-        }
-    }
-    .collapse i{
-        color: $dark-text-color;
-    }
-    .darkMode-toggler{
-      button{
-          color: $dark-text-color;
-          .toggler-span-a{
-              background-color: $dark-text-color;
-          }
-        }
-      }
-    .sm-menu-content a {
+    color: $light-text-color;
+    .hiperlink, .button-toggler, .sm-menu-icon{
         color: $light-text-color;
+    }
+    .hiperlink:hover{
+        color: $accent-light-color;
+    }  
+    .button-toggler-span-a{
+        background-color: $bg-light-color;
+    }
+    .small-hover {
+        color: $dark-text-color;
+        &:hover{
+            color: $light-text-color;
+        }
     }
 }
 
 
 .dark{
     background-color: $bg-dark-color;
-    color:$dark-text-color;
-    .hls a{
-        color: $dark-text-color ;
+    color:$light-text-color;
+    .hiperlink, .button-toggler{
+        color: $light-text-color ;
         &:hover{
             color: $accent-dark-color ;
         }   
     }
-    .darkMode-toggler{
-        &::before{
-            content: 'Dark mode Off';
+    .small-hover {
+        &:focus{
+            background-color: $accent-dark-color;
         }
-        button{
-            color: inherit ;
-            .toggler-span-a{
-                margin-left:23px;
-                background-color: $dark-text-color ;
-            }
-            &:hover{
-                color: $accent-dark-color;
-                .toggler-span-a{
-                    background-color: $accent-dark-color;
-                }
-            } 
+        &:hover{
+            background-color: $accent-dark-color;
+            color: $light-text-color;
         }
     }
-    .sm-menu-content{
-        button:focus{
-                background-color: $accent-dark-color;
-        }
-    }
-    .collapse{
-        color: inherit;
-    }
-    .scrolled{
+
+    .button-toggler-span-a{
+        margin-left:23px;
         background-color: $bg-light-color ;
-        .hls a:hover, .sm-menu-content:hover{
-                color: $accent-dark-color ;
-            }   
-        .navbar, .collapse i, .hls a{
-            color: $light-text-color;
+    }
+    .darkMode-toggler:before{
+        content: 'Dark mode Off';
+    }
+    .sm-menu-icon{
+        color: $light-text-color;
+    }
+}
+
+
+.dark .scrolled{
+    background-color: $light-text-color;
+    color: $dark-text-color;
+    .upbar, .sm-menu-icon{
+        color: $dark-text-color;
+    }
+    .button-toggler{
+        color: $dark-text-color;
+        &:hover{
+            color: $accent-dark-color;
         }
-        .sm-menu-content a{
-                color: $dark-text-color ;
-        }
-        .darkMode-toggler:nth-child(n){
-            color: $light-text-color;
-            button{
-                .toggler-span-a{
-                    background-color: $light-text-color;
-                }
-                &:hover{
-                    color: $accent-dark-color;
-                    .toggler-span-a{
-                        background-color: $accent-dark-color;
-                    }
-                }
-            }    
-        }
-        
-    }   
+    }
+    .button-toggler-span-a{
+        background-color: $dark-text-color;
+    }
 }
 
 
 @media screen and(min-width: 768px) {
     header {
-        .nav-container{
-            transform: translateY(calc(-100vh + 72px)); 
+        height: 80px;
+    }
+    .nav-container{
+        transform: translateY(calc(-100vh + 72px)); 
+    }
+    .menu-items{
+        display: flex;
+        margin-right: 10px;
+        button{
+            margin: 0 10px;
         }
-        .menu-items{
-            display: flex;
-            margin-right: 10px;
-            button{
-                margin: 0 10px;
-            }
-        }
-        .sm-menu{
-            display: none;
-        }  
+    }
+    .sm-menu{
+        display: none;
+    }  
+    .about_me-container{
+        width: 80vw;
     }
 }

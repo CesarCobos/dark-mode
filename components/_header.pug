@@ -1,0 +1,15 @@
+.nav-container#nav.display-inherit.width-100vw.justify-inherit.align-items-center.transition-inherit
+    .navbar.max-width-1300.display-inherit.width-100vw.justify-inherit.align-items-center.justify-spacebetween
+        .navbar-left.display-inherit.align-items-center
+            p Cesar Cobos
+        .sm-menu.display-inherit.justify-content-center
+            button.collapse.no-border.transparent-background(type="button")
+                i.sm-menu-icon.text-header#menuButton(onClick="menuOpen()" class="fas fa-chevron-up") 
+            .sm-menu-content.no-display.align-items-center.width-100vw.transition-5.flex-column
+                +small-menu()
+        .navbar-right.display-inherit.align-items-center.text-small
+            .menu-items.no-display
+                +menuBar()
+            .darkMode-toggler.display-inherit.flex-column.align-items-center.justify-content-center
+                button.button-toggler.display-inherit.align-items-center.transparent-background.transition-5(type="button" onClick="toggle_dark_mode()")
+                    span.button-toggler-span-a.transition-inherit
