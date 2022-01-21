@@ -232,6 +232,9 @@ header {
   text-align: center;
   padding: 5px;
   border-radius: 6px;
+  border: 1px solid;
+  background-color: #212121;
+  color: #e9e8ed;
   position: absolute;
   top: 125%;
   left: 50%;

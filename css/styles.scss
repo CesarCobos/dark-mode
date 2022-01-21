@@ -199,9 +199,11 @@ header{
     text-align: center;
     padding: 5px ;
     border-radius: 6px;
+    border: 1px solid ;
+    background-color: $bg-dark-color;
+    color: $light-text-color;
 
     position: absolute;
-    // z-index: 5;
     top: 125%;
     left: 50%;
     margin-left: -30px;
