@@ -89,12 +89,14 @@ $primary-font: 'Spartan', sans-serif;
 .text-header{
     font-size: 2.25rem;
     line-height: 2.5rem;
-
 }
 .text-large{
     font-size: 1.125rem;
     line-height: 1.75rem;
-
+}
+.text-extra-small{
+    font-size: 0.75rem;
+    line-height: 1rem;
 }
 .text-small{
     font-size: 0.875rem;
@@ -103,14 +105,9 @@ $primary-font: 'Spartan', sans-serif;
 .text-normal{
     font-size: 1rem;
     line-height: 1.5rem;
-
 }
 .padding-bottom-12{
     padding-bottom: 12px;
-}
-.hiperlink{
-    font-size: 1rem;
-
 }
 .upbar{
     padding: 0 10px;
@@ -162,7 +159,7 @@ header{
     overflow: hidden;    
 }
 .small-hover {
-    padding: 10px 0px;
+    padding: 20px 0px;
     text-align: center;
     &:focus{
         background-color: $accent-light-color;
@@ -181,7 +178,7 @@ header{
     width: 43px;
     height: 21px;
     border-radius: 21px;
-    border: 3px solid;
+    border: 2px solid;
     &:hover{
         color: $accent-light-color;
     }
@@ -194,6 +191,29 @@ header{
     border-radius: 12px;
     background-color: $bg-dark-color;
 }
+.tooltip{
+    position: relative;
+}
+.tooltip .tooltip-text{
+    visibility: hidden;
+    text-align: center;
+    padding: 5px ;
+    border-radius: 6px;
+
+    position: absolute;
+    // z-index: 5;
+    top: 125%;
+    left: 50%;
+    margin-left: -30px;
+
+    opacity: 0;
+    transition: opacity .5s; 
+}
+.tooltip:hover .tooltip-text{
+    visibility: visible;
+    opacity: 1;
+}
+
 main{
     height: 200vh;    
 }
@@ -204,9 +224,9 @@ main{
     .hiperlink, .button-toggler, .sm-menu-icon{
         color: $light-text-color;
     }
-    .hiperlink:hover{
+    .hiperlink:hover, .button-toggler:hover{
         color: $accent-light-color;
-    }  
+    } 
     .button-toggler-span-a{
         background-color: $bg-light-color;
     }
@@ -257,6 +277,9 @@ main{
     .upbar, .sm-menu-icon{
         color: $dark-text-color;
     }
+    .upbar:hover{
+        color: $accent-dark-color;
+    }
     .button-toggler{
         color: $dark-text-color;
         &:hover{
@@ -286,7 +309,4 @@ main{
     .sm-menu{
         display: none;
     }  
-    .about_me-container{
-        width: 80vw;
-    }
 }

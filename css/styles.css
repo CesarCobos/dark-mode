@@ -115,6 +115,11 @@
   line-height: 1.75rem;
 }
 
+.text-extra-small {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .text-small {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -127,10 +132,6 @@
 
 .padding-bottom-12 {
   padding-bottom: 12px;
-}
-
-.hiperlink {
-  font-size: 1rem;
 }
 
 .upbar {
@@ -189,7 +190,7 @@ header {
 }
 
 .small-hover {
-  padding: 10px 0px;
+  padding: 20px 0px;
   text-align: center;
 }
 .small-hover:focus {
@@ -208,7 +209,7 @@ header {
   width: 43px;
   height: 21px;
   border-radius: 21px;
-  border: 3px solid;
+  border: 2px solid;
 }
 .button-toggler:hover {
   color: #d63a45;
@@ -222,6 +223,29 @@ header {
   background-color: #212121;
 }
 
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  margin-left: -30px;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
 main {
   height: 200vh;
 }
@@ -233,7 +257,7 @@ main {
 .scrolled .hiperlink, .scrolled .button-toggler, .scrolled .sm-menu-icon {
   color: #e9e8ed;
 }
-.scrolled .hiperlink:hover {
+.scrolled .hiperlink:hover, .scrolled .button-toggler:hover {
   color: #d63a45;
 }
 .scrolled .button-toggler-span-a {
@@ -281,6 +305,9 @@ main {
 .dark .scrolled .upbar, .dark .scrolled .sm-menu-icon {
   color: #212121;
 }
+.dark .scrolled .upbar:hover {
+  color: #11858f;
+}
 .dark .scrolled .button-toggler {
   color: #212121;
 }
@@ -313,9 +340,5 @@ main {
 
   .sm-menu {
     display: none;
-  }
-
-  .about_me-container {
-    width: 80vw;
   }
 }

@@ -1,15 +1,15 @@
 //- Menu navbar
-mixin menuItem(link,name,class_1,class_2,class_3)
-    a.text-dark.hiperlink(href=link onClick="return false" class=class_1 class=class_2 class=class_3
-        class="no-decoration transition-5")=name
-        //- span.width-100vw.height-45px
+mixin menuItem(link,name,class_1,class_2,class_3,tooltip)
+    a.text-dark.no-decoration.transition-5.hiperlink.text-small(href=link onClick="return false" rel="noreferrer" class=class_1 class=class_2 class=class_3)=name
+        .span.tooltip-text.text-extra-small=tooltip  
+
    
 mixin menuBar()
-    +menuItem("#","Home","upbar")
-    +menuItem("#","About_me","upbar")
-    +menuItem("#","Projects","upbar")
-    +menuItem("#","Resume","upbar")
-    +menuItem("#","Blog","upbar")
+    +menuItem("#","Home","upbar","tooltip","","Hola")
+    +menuItem("#","About_me","upbar","tooltip","","Hola")
+    +menuItem("#","Projects","upbar","tooltip","","Hola")
+    +menuItem("#","Resume","upbar","tooltip","","Hola")
+    +menuItem("#","Blog","upbar","tooltip","","Hola")
 
 mixin small-menu()
     +menuItem("#","Home","small-hover","width-100vw")

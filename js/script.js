@@ -28,12 +28,12 @@ function toggle_dark_mode(){ //este nombre también va ligado al botón con el e
     // }
 //cambiando iconos segun el estado del Dark mode
 //Esto puede servir para cambiar estilos de iconos en la barra de redes
-    var social = document.getElementById("social"); 
-    if(social.className === "fab fa-facebook"){
-        social.className = "fab fa-twitter";
-    }else{
-        social.className = "fab fa-facebook";
-    }
+    // var social = document.getElementById("social"); 
+    // if(social.className === "fab fa-facebook"){
+    //     social.className = "fab fa-twitter";
+    // }else{
+    //     social.className = "fab fa-facebook";
+    // }
     
 }
 
