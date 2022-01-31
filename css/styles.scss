@@ -307,6 +307,25 @@ main{
     background-repeat: no-repeat;
     background-position: center;
 }
+.footer-container{
+    display: flex;
+    width: 100vw;
+    height: 500px;
+    background-color: #B31217;
+    color: white;
+
+}
+.social-icons{
+    margin: 24px 24px;
+}
+.content-icons{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+
 
 .scrolled{
     background-color: $bg-dark-color ;
@@ -433,5 +452,11 @@ main{
     //     width: 200px;
     //     height: 200px;
     // }
+    .content-icons{
+        
+        flex-direction: row;
+        
+    }
+    
 }
 

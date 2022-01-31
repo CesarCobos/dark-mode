@@ -24,3 +24,9 @@ mixin focusButton(name,link)
 
 mixin outlineButton(name,link)
     a.outline_button(href=link, target="_blank", rel="noopener noreferrer" onClick="return false")= name
+
+
+mixin social(name,icon,link)
+    a.social-icons(href=link, target="_blank", rel="noopener noreferrer")
+        i.fab.text-header(class=icon)
+        p=name
