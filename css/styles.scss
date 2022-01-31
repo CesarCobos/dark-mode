@@ -112,6 +112,9 @@ $primary-font: 'Spartan', sans-serif;
     font-size: 1rem;
     line-height: 1.5rem;
 }
+.uppercase{
+    text-transform: uppercase;
+}
 .padding-bottom-12{
     padding-bottom: 12px;
 }
@@ -147,7 +150,7 @@ $primary-font: 'Spartan', sans-serif;
 }
 .outline_button{
     margin: 24px 0 0 0;
-    padding: 6px 16px;
+    padding: 6px 14px;
     border: 2px solid;
     border-radius: 8px;
 }
@@ -174,14 +177,17 @@ body .bg-container{
 }
 
 
+
 header{
     height: 0;
+    z-index: 2;
 }
 
 .nav-container{
     position: fixed;
     bottom: 0;
     height: 72px;
+    background-color: $bg-light-color;
 }
 .navbar{
     padding: 0px 16px;
@@ -199,6 +205,7 @@ header{
     bottom: 80px;
     max-height: 0;
     overflow: hidden;    
+    background-color: $bg-light-color;
 }
 .small-hover {
     padding: 20px 0px;
@@ -261,7 +268,7 @@ header{
 main{
     max-width: 100vw;
     position: absolute;    
-    top: 80px;
+    top: 240px;
 }
 .hero{
     height: 400px;
@@ -270,9 +277,36 @@ main{
 .hero-container{
     // background-color: burlywood;
     height: 200px;
-    max-width: 600px;
+    max-width: 1300px;
 }
 
+.photo-container{
+    max-width: 350px;
+
+}
+.typeText{
+    height: 54px;
+    letter-spacing: 2px;
+}
+.line{
+    margin: 24px 0 0 0;
+    width: 350px;
+    height: 350px;
+    background-image: url("https://drive.google.com/uc?export=view&id=1rI6-B5i0LzLiyThhK6jNpEg2xKMayLkF");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.photo{
+    position: absolute;
+    margin: 24px 0 0 0;
+    width: 350px;
+    height: 350px;
+    background-image: url("https://drive.google.com/uc?export=view&id=16OSefNj3pZvOx5cK05Dk-uVs4JKI6zNq");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 .scrolled{
     background-color: $bg-dark-color ;
@@ -298,6 +332,9 @@ main{
 .dark{
     background-color: $bg-dark-color;
     color:$light-text-color;
+    .nav-container{
+        background-color: $bg-dark-color;
+    }
     .hiperlink, .button-toggler{
         color: $light-text-color ;
         &:hover{
@@ -323,6 +360,9 @@ main{
     }
     .sm-menu-icon{
         color: $light-text-color;
+    }
+    .sm-menu-content{
+        background-color: $dark-text-color;
     }
 }
 
@@ -358,6 +398,9 @@ main{
     .nav-container{
         transform: translateY(calc(-100vh + 72px)); 
     }
+    main{ 
+        top: 100px;
+    }
     .menu-items{
         display: flex;
         margin-right: 10px;
@@ -380,4 +423,15 @@ main{
     .outline_button{
         margin: 0 0 0 0 ;
     }
+    .hero-container{
+        flex-direction: row;
+    }
+    .info-container{
+        padding-right: 56px;
+    }
+    // .line{
+    //     width: 200px;
+    //     height: 200px;
+    // }
 }
+

@@ -11,31 +11,15 @@ localStorage.removeItem('theme')
 
 
 
-function toggle_dark_mode(){ //este nombre también va ligado al botón con el evento onClick
-// identificando el id "dark" en el HTML y asignandolo a la variable "element"
+function toggle_dark_mode(){
     var element = document.getElementById("dark")
-//Aquí se hace el cambio de la clase por "dark"
+
     element.classList.toggle("dark")
-//solo un mensaje para la consola
+
     console.log("Dark Mode Activaded")
-//reemplazando la clase para el boton de Dark Mode
-//Cambia el icono segun el estado en el que se encuentra
-    // var buttonIcon = document.getElementById("buttonIcon"); 
-    // if(buttonIcon.className === "fas fa-toggle-on"){
-    //     buttonIcon.className = "fas fa-toggle-off";
-    // }else{
-    //     buttonIcon.className = "fas fa-toggle-on";
-    // }
-//cambiando iconos segun el estado del Dark mode
-//Esto puede servir para cambiar estilos de iconos en la barra de redes
-    // var social = document.getElementById("social"); 
-    // if(social.className === "fab fa-facebook"){
-    //     social.className = "fab fa-twitter";
-    // }else{
-    //     social.className = "fab fa-facebook";
-    // }
-    
 }
+
+
 let menu_hover = document.getElementById("menuButton");
 menu_hover.addEventListener("mouseover", function(){
   if(menuButton.classList.contains("fa-chevron-up")){
@@ -46,6 +30,7 @@ menu_hover.addEventListener("mouseover", function(){
     menuButton.classList.remove("fa-drumstick-bite");
   },1000);
 });
+
 
 
 function menuOpen(){
@@ -61,26 +46,22 @@ function menuOpen(){
     
 
 
-//Navbar onscrol change color
-//Vinculando Js con el elemento en HTML
+
 var barNav = document.getElementById("nav");
-window.onscroll = function(){ //Definiendo funcion
-//condicion, si la pantalla hace scroll por 180 entonces
-//Se agrega la clase "scrolled" al id "nav"
-    if (document.documentElement.scrollTop >= 180){
+window.onscroll = function(){
+    if (document.documentElement.scrollTop >= 80){
         barNav.classList.add("scrolled"); 
         console.log("Scroll On - color change");
     }else{
-//pero si es menor a 180, entonces se va a eliminar la clase "scrolled" del id "nav"
         barNav.classList.remove("scrolled")
         console.log("Scroll Off - color change");
     }
 }
 
 
+
 var coll = document.getElementsByClassName("collapse");
 var i;
-
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
@@ -93,9 +74,9 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 
+
 var colli = document.getElementsByClassName("collapse");
 var i;
-
 for (i = 0; i < colli.length; i++) {
   colli[i].addEventListener("click", function() {
     this.classList.toggle("active");
@@ -107,3 +88,48 @@ for (i = 0; i < colli.length; i++) {
     }
   });
 }
+
+
+
+
+var typeText = document.getElementById("machine")
+var textToBeTyped = "Civil Engineer"
+var textToBeTypedArr = ["Civil Engineer", "Data Science", "Project Manager", "UX / UI","Mechanical Design", "FrontEnd Dev"]
+var index = 0, isAdding = true, textToBeTypedIndex = 0
+
+function playAnim() {
+  setTimeout(function () {
+    // set the text of typeText to a substring of the text to be typed using index.
+    typeText.innerText = textToBeTypedArr[textToBeTypedIndex].slice(0, index)
+    if (isAdding) {
+      // adding text
+      if (index > textToBeTypedArr[textToBeTypedIndex].length) {
+        // no more text to add
+        isAdding = false
+        //break: wait 2s before playing again
+        setTimeout(function () {
+          playAnim()
+        }, 2000)
+        return
+      } else {
+        // increment index by 1
+        index++
+      }
+    } else {
+      // removing text
+      if (index === 0) {
+        // no more text to remove
+        isAdding = true
+        //switch to next text in text array
+        textToBeTypedIndex = (textToBeTypedIndex + 1) % textToBeTypedArr.length
+      } else {
+        // decrement index by 1
+        index--
+      }
+    }
+    // call itself
+    playAnim()
+  }, isAdding ? 120 : 60)
+}
+// start animation
+playAnim()
