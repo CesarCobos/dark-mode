@@ -18,3 +18,9 @@ mixin small-menu()
     +menuItem("#","Resume","small-hover","width-100vw")
     +menuItem("#","Blog","small-hover","width-100vw")
 
+mixin focusButton(name,link)
+    a.focus_button(href=link, target="_blank", rel="noopener noreferrer" onClick="return false")= name
+
+
+mixin outlineButton(name,link)
+    a.outline_button(href=link, target="_blank", rel="noopener noreferrer" onClick="return false")= name

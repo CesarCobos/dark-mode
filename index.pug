@@ -1,14 +1,16 @@
 include ./components/_head.pug
-body.display-flex.align-items-center.flex-column
+body.display-flex.align-items-center.flex-column.width-100vw
+    .bg-container.width-100vw 
+
+
     header.display-inherit.justify-content-center.align-items-center.transition-5
         include ./components/_header.pug
                             
     main.transition-inherit.flex.justify-content-center.width-100vw
-        //- include ./components/_hero.pug
+        include ./components/_hero.pug
         //- include ./components/_aboutme.pug
 
 
     script(src="./js/script.js")
     script(src="https://kit.fontawesome.com/32dce108fb.js" crossorigin="anonymous") 
 
-        

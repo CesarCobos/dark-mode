@@ -36,6 +36,17 @@ function toggle_dark_mode(){ //este nombre también va ligado al botón con el e
     // }
     
 }
+let menu_hover = document.getElementById("menuButton");
+menu_hover.addEventListener("mouseover", function(){
+  if(menuButton.classList.contains("fa-chevron-up")){
+    // menuButton.classList.remove("fa-chevron-up");
+    menuButton.classList.add("fa-drumstick-bite");
+  }
+  setTimeout(function(){
+    menuButton.classList.remove("fa-drumstick-bite");
+  },1000);
+});
+
 
 function menuOpen(){
     var menuButton = document.getElementById("menuButton"); 
